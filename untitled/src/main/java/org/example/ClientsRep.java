@@ -17,7 +17,6 @@ public class ClientsRep implements IRepository<Clients>{
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Ошибка при добавлении клиента: " + client);
         }
     }
 
@@ -29,7 +28,6 @@ public class ClientsRep implements IRepository<Clients>{
         delClient.setExist(false);
         em.merge(delClient);}
         else{
-            System.out.println("Клиент с id " + id + "не найден");
         }
     }
 
@@ -41,7 +39,6 @@ public class ClientsRep implements IRepository<Clients>{
             Clients updatedClient = em.merge(client);
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Ошибка при обновлении клиента: " + client);
         }
     }
     @Override

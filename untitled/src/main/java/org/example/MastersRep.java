@@ -18,7 +18,6 @@ public class MastersRep implements IRepository<Masters>{
         try {
             em.persist(master);
         } catch (Exception e) {
-            System.err.println("Ошибка при добавлении мастера: " + master);
         }
 
     }
@@ -31,7 +30,6 @@ public class MastersRep implements IRepository<Masters>{
             delMaster.setExist(false);
             em.merge(delMaster);}
         else{
-            System.out.println("Клиент с id " + id + "не найден");
         }
 
     }
@@ -44,7 +42,6 @@ public class MastersRep implements IRepository<Masters>{
             Masters updatedMaster = em.merge(master);
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Ошибка при обновлении мастера: " + master);
         }
     }
 
